@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kinde Starter Kit - NextJS with full App Router support
 
-## Getting Started
+## Register an account on Kinde
 
-First, run the development server:
+To get started set up an account on [Kinde](https://app.kinde.com/register). This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Setup your local environment
+
+Clone this repo and install dependencies by running `npm i`
+
+Make a copy of `.env.local.sample` and name it simply `.env.local`. Set the following values from the Kinde `Settings -> Applications -> Backend app` page.
+
+- `KINDE_CLIENT_ID` with the `Client ID` value
+- `KINDE_CLIENT_ID` with the `Client ID` value
+- `KINDE_CLIENT_SECRET` with the `Domain` value
+
+e.g
+
+```
+KINDE_CLIENT_ID=<your_kinde_client_id>
+KINDE_CLIENT_SECRET=<your_kinde_client_secret>
+KINDE_ISSUER_URL=https://<your_kinde_subdomain>.kinde.com
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Set your Callback and Logout URLs
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Your user will be redirected to Kinde to authenticate. After they have logged in or registered they will be redirected back to your React application.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You need to specify in Kinde which url you would like your user to be redirected to in order to authenticate your app.
 
-## Learn More
+On the `Settings -> Applications -> Backend app` page set `Allowed callback URLs` to `http://localhost:3000/api/auth/kinde_callback`
 
-To learn more about Next.js, take a look at the following resources:
+> Important! This is required for your users to successfully log in to your app.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You will also need to set the url they will be redirected to upon logout. Set the ` Allowed logout redirect URLs` to http://localhost:3000.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Start your app
 
-## Deploy on Vercel
+Run `npm run dev` in a terminal and navigate to `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Click on `Sign up` and register your first user for your business!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## View users in Kinde
+
+If you navigate to the "Users" page within Kinde you will see your newly registered user there. 🚀
