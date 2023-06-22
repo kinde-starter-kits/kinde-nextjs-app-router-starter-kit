@@ -11,8 +11,8 @@ Clone this repo and install dependencies by running `npm i`
 Make a copy of `.env.local.sample` and name it simply `.env.local`. Set the following values from the Kinde `Settings -> Applications -> Backend app` page.
 
 - `KINDE_CLIENT_ID` with the `Client ID` value
-- `KINDE_CLIENT_ID` with the `Client ID` value
-- `KINDE_CLIENT_SECRET` with the `Domain` value
+- `KINDE_CLIENT_SECRET` with the `Client Secret` value
+- `KINDE_ISSUER_URL` with the `Domain` value
 
 e.g
 
