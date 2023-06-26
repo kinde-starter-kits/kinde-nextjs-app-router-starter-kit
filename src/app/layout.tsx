@@ -40,6 +40,7 @@ export default function RootLayout({
                       className="avatar"
                       src={user?.picture || ""}
                       alt="user profile avatar"
+                      referrerpolicy="no-referrer"
                     />
                   ) : (
                     <div className="avatar">
