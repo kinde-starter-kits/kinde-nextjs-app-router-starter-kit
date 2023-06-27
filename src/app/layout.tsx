@@ -12,11 +12,7 @@ export const metadata = {
   description: "Kinde with NextJS App Router",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const { isAuthenticated, getUser } = getKindeServerSession();
   const user = getUser();
   return (
@@ -28,19 +24,17 @@ export default function RootLayout({
             <div>
               {!isAuthenticated() ? (
                 <>
-                  <LoginLink className="btn btn-ghost sign-in-btn">
-                    Sign in
-                  </LoginLink>
+                  <LoginLink className="btn btn-ghost sign-in-btn">Sign in</LoginLink>
                   <RegisterLink className="btn btn-dark">Sign up</RegisterLink>
                 </>
               ) : (
                 <div className="profile-blob">
-                  {user.picture !== "" ? (
+                  {user?.picture ? (
                     <img
                       className="avatar"
-                      src={user?.picture || ""}
+                      src={user?.picture}
                       alt="user profile avatar"
-                      referrerpolicy="no-referrer"
+                      referrerPolicy="no-referrer"
                     />
                   ) : (
                     <div className="avatar">
@@ -71,9 +65,7 @@ export default function RootLayout({
               </Link>
             </p>
 
-            <small className="text-subtle">
-              © 2023 KindeAuth, Inc. All rights reserved
-            </small>
+            <small className="text-subtle">© 2023 KindeAuth, Inc. All rights reserved</small>
           </div>
         </footer>
       </body>
