@@ -12,9 +12,13 @@ export const metadata = {
   description: "Kinde with NextJS App Router",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { isAuthenticated, getUser } = getKindeServerSession();
-  const user = getUser();
+  const user = await getUser();
   return (
     <html lang="en">
       <body>
@@ -22,9 +26,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <nav className="nav container">
             <h1 className="text-display-3">KindeAuth</h1>
             <div>
-              {!isAuthenticated() ? (
+              {!(await isAuthenticated()) ? (
                 <>
-                  <LoginLink className="btn btn-ghost sign-in-btn">Sign in</LoginLink>
+                  <LoginLink className="btn btn-ghost sign-in-btn">
+                    Sign in
+                  </LoginLink>
                   <RegisterLink className="btn btn-dark">Sign up</RegisterLink>
                 </>
               ) : (
@@ -65,7 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </Link>
             </p>
 
-            <small className="text-subtle">© 2023 KindeAuth, Inc. All rights reserved</small>
+            <small className="text-subtle">
+              © 2023 KindeAuth, Inc. All rights reserved
+            </small>
           </div>
         </footer>
       </body>
