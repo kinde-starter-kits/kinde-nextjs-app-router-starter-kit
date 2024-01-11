@@ -4,9 +4,10 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 export async function GET() {
   const { getUser, isAuthenticated } = getKindeServerSession();
 
-  if (!isAuthenticated()) {
+  if (!(await isAuthenticated())) {
     return new Response("Unauthorized", { status: 401 });
   }
+
   const user = getUser();
   const data = { message: "Hello User", id: user.id };
 
