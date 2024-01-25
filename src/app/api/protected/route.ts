@@ -1,3 +1,6 @@
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { NextResponse } from "next/server";
+
 export async function GET() {
   const { getUser, isAuthenticated } = getKindeServerSession();
 
@@ -6,7 +9,8 @@ export async function GET() {
   }
 
   const user = await getUser();
-  const data = { message: "Hello User", id: user.id };
+  const data = { message: "Hello User", id: user?.given_name };
 
   return NextResponse.json({ data });
 }
+
