@@ -1,45 +1,78 @@
 # Kinde Starter Kit - NextJS with full App Router support
 
-## Register an account on Kinde
+This is a starter kit to get you started with Kinde on Next.js
 
-To get started set up an account on [Kinde](https://app.kinde.com/register). This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Dependancies
+
+- node.js (>=18)
+- Kinde account - Get free account [here](https://app.kinde.com/register)
+  - Kinde back-end web application setup
 
 ## Setup your local environment
 
-Clone this repo and install dependencies by running `npm i`
+1. [Fork](https://github.com/kinde-starter-kits/kinde-nextjs-app-router-starter-kit/fork)
+2. Clone the repository
 
-Make a copy of `.env.local.sample` and name it simply `.env.local`. Set the following values from the Kinde `Settings -> Applications -> Backend app` page.
+```
+git clone https://github.com/<your_github_username>/kinde-nextjs-app-router-starter-kit.git
+```
 
-- `KINDE_CLIENT_ID` with the `Client ID` value
-- `KINDE_CLIENT_SECRET` with the `Client Secret` value
-- `KINDE_ISSUER_URL` with the `Domain` value
+3. Within the project folder install the dependancies
 
-e.g
+```
+> cd kinde-nextjs-app-router-starter-kit
+> npm i
+```
 
+4. Set up your environment
+   
+Rename `.env.local.sample` to `.env.local`
+
+Update the file with your application settings.  These can be found within the backend application details within the Kinde dashboard
 ```
 KINDE_CLIENT_ID=<your_kinde_client_id>
 KINDE_CLIENT_SECRET=<your_kinde_client_secret>
 KINDE_ISSUER_URL=https://<your_kinde_subdomain>.kinde.com
 ```
 
-## Set your Callback and Logout URLs
 
-Your user will be redirected to Kinde to authenticate. After they have logged in or registered they will be redirected back to your React application.
+## Setup Kinde
 
-You need to specify in Kinde which url you would like your user to be redirected to in order to authenticate your app.
+Within your back-end web application update your settings
 
-On the `Settings -> Applications -> Backend app` page set `Allowed callback URLs` to `http://localhost:3000/api/auth/kinde_callback`
+**Allowed callback URLs**
 
-> Important! This is required for your users to successfully log in to your app.
+```
+http://localhost:3000/api/auth/kinde_callback
+```
 
-You will also need to set the url they will be redirected to upon logout. Set the ` Allowed logout redirect URLs` to http://localhost:3000.
+**Allowed logout redirect URLs**
+
+```
+http://localhost:3000
+```
+
+**Note: When you deploy your application, these URLs will have to be updated accordingly**
+
 
 ## Start your app
 
-Run `npm run dev` in a terminal and navigate to `http://localhost:3000`.
+```
+npm run dev
+```
+
+open `http://localhost:3000` in your browser
+
+## Create your first user
 
 Click on `Sign up` and register your first user for your business!
 
-## View users in Kinde
+Within the Kinde Dashboard, you will see your new user listed within the user view. 🚀
 
-If you navigate to the "Users" page within Kinde you will see your newly registered user there. 🚀
+# Resources
+- [Kinde Next.js SDK Docs](https://kinde.com/docs/developer-tools/nextjs-sdk/)
+- [Kinde Management API Docs](https://kinde.com/api/docs/#kinde-management-api)
+
+# Get help
+- [Discord](https://discord.gg/wHX6j7wG5d)
+- [Slack](https://join.slack.com/t/thekindecommunity/shared_invite/zt-26hdaavyc-CfOa06vP23guSwK~~OpFMQ)
