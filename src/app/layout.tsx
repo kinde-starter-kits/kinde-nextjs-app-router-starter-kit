@@ -17,8 +17,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { isAuthenticated, getUser } = getKindeServerSession();
+  const { isAuthenticated, getUser, getOrganization } = getKindeServerSession();
   const user = await getUser();
+  const organization = await getOrganization();
+
   return (
     <html lang="en">
       <body>
@@ -52,7 +54,7 @@ export default async function RootLayout({
                     <p className="text-heading-2">
                       {user?.given_name} {user?.family_name}
                     </p>
-
+                    <p className="text-body-3">{organization?.orgName}</p>
                     <LogoutLink className="text-subtle">Log out</LogoutLink>
                   </div>
                 </div>

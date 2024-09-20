@@ -224,3 +224,30 @@ a {
 .next-steps-section {
   margin-top: var(--g-spacing-2x-large);
 }
+
+.form {
+  display: grid;
+  gap: var(--g-spacing-base);
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: grid;
+  gap: var(--g-spacing-base);
+  grid-template-columns: 1fr;
+}
+
+.form-group label {
+  font-size: var(--g-font-size-small);
+}
+
+.form-group input {
+  border: 1px solid var(--g-color-grey-100);
+  border-radius: var(--g-border-radius-small);
+  font-size: var(--g-font-size-base);
+  padding: var(--g-spacing-base);
+}
+
+.form-group input:focus {
+  border-color: var(--g-color-grey-700);
+}
