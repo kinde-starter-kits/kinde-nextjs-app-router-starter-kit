@@ -6,6 +6,7 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import TestComponent from "./dashboard/testcomponent";
 
 export const metadata = {
   title: "Kinde Auth",
@@ -26,7 +27,11 @@ export default async function RootLayout({
           <nav className="nav container">
             <h1 className="text-display-3">KindeAuth</h1>
             <div>
-              {!(await isAuthenticated()) ? (
+              <TestComponent></TestComponent>
+              <LoginLink className="btn btn-ghost sign-in-btn">
+                    Sign in
+                  </LoginLink>
+              {/* {!(await isAuthenticated()) ? (
                 <>
                   <LoginLink className="btn btn-ghost sign-in-btn">
                     Sign in
@@ -56,7 +61,7 @@ export default async function RootLayout({
                     <LogoutLink className="text-subtle">Log out</LogoutLink>
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </nav>
         </header>
