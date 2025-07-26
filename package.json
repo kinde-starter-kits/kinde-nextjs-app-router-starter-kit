@@ -8,13 +8,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@kinde-oss/kinde-auth-nextjs": "^2.5.0",
+    "@kinde-oss/kinde-auth-nextjs": "^2.8.6",
     "@types/node": "20.11.5",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
     "eslint": "8.56.0",
     "eslint-config-next": "^15.1.2",
     "next": "^15.1.2",
+    "next-cloudinary": "^6.16.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "5.3.3"

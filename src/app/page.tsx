@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
         >
           Go to docs
         </Link>
+        <LoginLink>Sign in</LoginLink>
+
+        <RegisterLink>Sign up</RegisterLink>
       </div>
     </div>
   );
