@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@kinde-oss/kinde-auth-nextjs": "^2.5.0",
+    "@kinde-oss/kinde-auth-nextjs": "^2.9.1",
     "@types/node": "20.11.5",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
