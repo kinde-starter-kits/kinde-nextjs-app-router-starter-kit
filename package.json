@@ -13,10 +13,10 @@
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
     "eslint": "8.56.0",
-    "eslint-config-next": "^15.1.2",
-    "next": "^15.1.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "eslint-config-next": "^15.1.9",
+    "next": "^15.1.9",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
     "typescript": "5.3.3"
   }
 }
